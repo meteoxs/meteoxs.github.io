@@ -401,14 +401,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    380
+                    430
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -442,7 +442,7 @@ res<span class="token operator">=</span>requests<span class="token punctuation">
 <p>将order=”../../../../../../etc/passwd”，返回<code>You are not allowed to do that.</code>，说明有waf。</p>
 <p>waf过滤了../，导致了目录穿越不可用，也就无法读到其他源码和flag</p>
 <p>后面看wp才发现这waf写的真奇葩，只验证前个字符，那只要将前几个随便写就行</p>
-<p>order=”abcd/../../../../../../flag”，得flag: <code>flag&#123;847d2f93276a21f084c44f4d74c61ef4&#125;</code></p>
+<p>order=”abcd/../../../../../../flag”，得flag: <code>flag{847d2f93276a21f084c44f4d74c61ef4}</code></p>
 <p>读取源码：</p>
 <pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
 
@@ -471,7 +471,25 @@ res<span class="token operator">=</span>requests<span class="token punctuation">
 <h2 id="SQLi"><a href="#SQLi" class="headerlink" title="SQLi"></a>SQLi</h2><p><img src="../../../../medias/img/image-20200804224730946.png" alt="image-20200804224730946"></p>
 <p>一直试不出来，先占坑</p>
 <p>（无列名注入+<code>sys.x$schema_flattened_keys</code>来绕过<code>information_schema</code>）</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -947,7 +965,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.2k</span>&nbsp;字
+                class="white-color">2.4k</span>&nbsp;字
             
             
             
