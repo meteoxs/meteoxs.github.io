@@ -401,7 +401,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    968
+                    1k
                 </div>
                 
 
@@ -536,7 +536,25 @@
 <li>但在mysql 缺省不支持。需要调整mysql 的sql_mode模式：pipes_as_concat 来实现oracle     的一些功能。</li>
 </ul>
 <p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42158602/article/details/103930598">https://blog.csdn.net/qq_42158602/article/details/103930598</a></p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -561,7 +579,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://meteoxs.github.io/2020/07/20/buuoj-shua-ti-ji-lu/">https://meteoxs.github.io/2020/07/20/buuoj-shua-ti-ji-lu/</a>
+                    <a href="http://meteoweb.top/2020/07/20/buuoj-shua-ti-ji-lu/">http://meteoweb.top/2020/07/20/buuoj-shua-ti-ji-lu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1000,7 +1018,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.2k</span>&nbsp;字
+                class="white-color">2.4k</span>&nbsp;字
             
             
             
