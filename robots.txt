@@ -10,5 +10,5 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 
-Sitemap: http://meteoweb.top/baidusitemap.xml
-Sitemap: http://meteoweb.top/sitemap.xml
+Sitemap: https://meteoweb.top/baidusitemap.xml
+Sitemap: https://meteoweb.top/sitemap.xml
