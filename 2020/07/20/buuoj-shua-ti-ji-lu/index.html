@@ -406,14 +406,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -430,55 +430,55 @@
             <div id="articleContent">
                 <p>记录buuoj写过的题</p>
 <h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h2 id="HCTF-2018-WarmUp"><a href="#HCTF-2018-WarmUp" class="headerlink" title="[HCTF 2018]WarmUp"></a>[HCTF 2018]WarmUp</h2><p>F12看到存在source.php，跳转后看到代码</p>
-<pre class=" language-php+HTML"><code class="language-php+HTML"> <?php
-    highlight_file(__FILE__);
-    class emmm
-    {
-        public static function checkFile(&$page)
-        {
-            $whitelist = ["source"=>"source.php","hint"=>"hint.php"];
-            if (! isset($page) || !is_string($page)) {
-                echo "you can't see it";
-                return false;
-            }
+<pre class=" language-php"><code class="language-php"> <span class="token delimiter">&lt;?php</span>
+    <span class="token function">highlight_file</span><span class="token punctuation">(</span><span class="token constant">__FILE__</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">class</span> <span class="token class-name">emmm</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">function</span> <span class="token function">checkFile</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token variable">$page</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token variable">$whitelist</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"source"</span><span class="token operator">=</span><span class="token operator">></span><span class="token string">"source.php"</span><span class="token punctuation">,</span><span class="token string">"hint"</span><span class="token operator">=</span><span class="token operator">></span><span class="token string">"hint.php"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> <span class="token function">isset</span><span class="token punctuation">(</span><span class="token variable">$page</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token operator">!</span><span class="token function">is_string</span><span class="token punctuation">(</span><span class="token variable">$page</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">echo</span> <span class="token string">"you can't see it"</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
 
-            if (in_array($page, $whitelist)) {
-                return true;
-            }
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">in_array</span><span class="token punctuation">(</span><span class="token variable">$page</span><span class="token punctuation">,</span> <span class="token variable">$whitelist</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
 
-            $_page = mb_substr(
-                $page,
-                0,
-                mb_strpos($page . '?', '?')
-            );
-            if (in_array($_page, $whitelist)) {
-                return true;
-            }
+            <span class="token variable">$_page</span> <span class="token operator">=</span> <span class="token function">mb_substr</span><span class="token punctuation">(</span>
+                <span class="token variable">$page</span><span class="token punctuation">,</span>
+                <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token function">mb_strpos</span><span class="token punctuation">(</span><span class="token variable">$page</span> <span class="token punctuation">.</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">in_array</span><span class="token punctuation">(</span><span class="token variable">$_page</span><span class="token punctuation">,</span> <span class="token variable">$whitelist</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
 
-            $_page = urldecode($page);
-            $_page = mb_substr(
-                $_page,
-                0,
-                mb_strpos($_page . '?', '?')
-            );
-            if (in_array($_page, $whitelist)) {
-                return true;
-            }
-            echo "you can't see it";
-            return false;
-        }
-    }
+            <span class="token variable">$_page</span> <span class="token operator">=</span> <span class="token function">urldecode</span><span class="token punctuation">(</span><span class="token variable">$page</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token variable">$_page</span> <span class="token operator">=</span> <span class="token function">mb_substr</span><span class="token punctuation">(</span>
+                <span class="token variable">$_page</span><span class="token punctuation">,</span>
+                <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token function">mb_strpos</span><span class="token punctuation">(</span><span class="token variable">$_page</span> <span class="token punctuation">.</span> <span class="token string">'?'</span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">)</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">in_array</span><span class="token punctuation">(</span><span class="token variable">$_page</span><span class="token punctuation">,</span> <span class="token variable">$whitelist</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">echo</span> <span class="token string">"you can't see it"</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    if (! empty($_REQUEST['file'])
-        && is_string($_REQUEST['file'])
-        && emmm::checkFile($_REQUEST['file'])
-    ) {
-        include $_REQUEST['file'];
-        exit;
-    } else {
-        echo "<br><img src=\"https://i.loli.net/2018/11/01/5bdb0d93dc794.jpg\" />";
-    }  
-?>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> <span class="token function">empty</span><span class="token punctuation">(</span><span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token operator">&amp;&amp;</span> <span class="token function">is_string</span><span class="token punctuation">(</span><span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token operator">&amp;&amp;</span> emmm<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">checkFile</span><span class="token punctuation">(</span><span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">include</span> <span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        exit<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> <span class="token string">"&lt;br>&lt;img src=\"https://i.loli.net/2018/11/01/5bdb0d93dc794.jpg\" />"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>  
+<span class="token delimiter">?></span>
 </code></pre>
 <p>可以看到考点为文件包含，传入的file参数先会检查是否在白名单中，第二个是检查传入的字符串中‘?’前的字符串是否在白名单中，第三个是先进行url解码再截取，其实可以直接第二个就构造payload得到flag</p>
 <blockquote>
@@ -730,7 +730,7 @@ i<span class="token operator">=</span><span class="token number">0</span>
 <p><img src="../../../../medias/img/image-20200916181648989.png" alt="image-20200916181648989"></p>
 <p><code>&lt;!--#exec cmd="cat ../flag_990c66bf85a09c664f0b6741840499b2"--&gt;</code></p>
 <p><img src="../../../../medias/img/image-20200916181934904.png" alt="image-20200916181934904"></p>
-<h1 id="real"><a href="#real" class="headerlink" title="real"></a>real</h1><h1 id="PHPMYADMIN-CVE-2018-12613"><a href="#PHPMYADMIN-CVE-2018-12613" class="headerlink" title="[PHPMYADMIN]CVE-2018-12613"></a>[PHPMYADMIN]CVE-2018-12613</h1><p><a href="https://blog.csdn.net/qq_45158261/article/details/107760856" target="_blank" rel="noopener">1</a></p>
+<h1 id="real"><a href="#real" class="headerlink" title="real"></a>real</h1><h2 id="PHPMYADMIN-CVE-2018-12613"><a href="#PHPMYADMIN-CVE-2018-12613" class="headerlink" title="[PHPMYADMIN]CVE-2018-12613"></a>[PHPMYADMIN]CVE-2018-12613</h2><p><a href="https://blog.csdn.net/qq_45158261/article/details/107760856" target="_blank" rel="noopener">1</a></p>
 <p><a href="https://blog.csdn.net/qq_33020901/article/details/80829269?https:%252f%252fblog.csdn.net%252fqq_33020901%252farticle%252fdetails%252f80829269" target="_blank" rel="noopener">2</a></p>
 <p>先执行sql语句</p>
 <blockquote>
@@ -1230,7 +1230,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.3k</span>&nbsp;字
+                class="white-color">5.1k</span>&nbsp;字
             
             
             
