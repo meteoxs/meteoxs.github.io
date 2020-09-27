@@ -400,7 +400,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    8 分
                 </div>
                 
 
@@ -418,14 +418,14 @@
                 <h2 id="MSIC"><a href="#MSIC" class="headerlink" title="MSIC"></a>MSIC</h2><h3 id="连签到都算不上"><a href="#连签到都算不上" class="headerlink" title="连签到都算不上"></a>连签到都算不上</h3><p>题目给出一个压缩包，看到里面txt，猜是base64加密后图片，解码后得到一个二维码，然后扫码得到\u开头的字符串，用java输出得到字符串，再用核心价值观解码，得到flag。</p>
 <p>真·签到题</p>
 <p>题目给了一个压缩包，猜测是伪加密。考虑到伪加密在kali，mac等系统中可直接打开。于是将压缩包拖到虚拟机中解压。</p>
-<p>![img](../../../../medias/img//clip_image002 (2).jpg)</p>
+<p><img src="../../../../medias/img//clip_image002(2).jpg" alt="img"></p>
 <p>得到一个图片，将它放到winhex中分析发现最后有一串base64加密的字符串。</p>
-<p>![img](../../../../medias/img//clip_image004 (2).jpg)</p>
+<p><img src="../../../../medias/img//clip_image004(2).jpg" alt="img"></p>
 <pre><code>Base64解密得到：EWOVEVH{U1ip_kp_uweeguuhw11a!} </code></pre>
 <p>对比CUMTCTF{，，，}格式可以发现，将该字符串字母左移两位即可得到flag。</p>
-<p>![img](../../../../medias/img//clip_image006 (2).jpg)</p>
+<p><img src="../../../../medias/img//clip_image006(2).jpg" alt="img"></p>
 <h3 id="兔兔那么可爱"><a href="#兔兔那么可爱" class="headerlink" title="兔兔那么可爱"></a>兔兔那么可爱</h3><p>题目给了一张图片和一个不知道什么格式的flag文件，根据hint，图片没什么用，将flag文件用txt打开，发现第12358个字符组成CUMTCT，猜测是斐波那契数列，于是写python脚本将对应位置的字符打印出来得到flag。</p>
-<p>![img](../../../../medias/img//clip_image008 (2).jpg)</p>
+<p><img src="../../../../medias/img//clip_image008(2).jpg" alt="img"></p>
 <h3 id="别做题了听歌吧"><a href="#别做题了听歌吧" class="headerlink" title="别做题了听歌吧"></a>别做题了听歌吧</h3><p>题目给了一个MP3文件，应该是音频隐写，用工具MP3Stego，根据题目的提示“别问，问就是cumt”，猜测cumt是密码，于是解密得到</p>
 <p><img src="../../../../medias/img//clip_image010.jpg" alt="img"></p>
 <p>这样一个txt，打开发现是一堆长短不一的空白格，将其转换成Morse编码，有</p>
@@ -1070,7 +1070,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.2k</span>&nbsp;字
+                class="white-color">5.1k</span>&nbsp;字
             
             
             
