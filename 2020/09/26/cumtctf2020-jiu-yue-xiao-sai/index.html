@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="cumt2020九月份校赛, Meteo&#39;s blog">
+    <meta name="keywords" content="Cumt2020九月月校赛 by 水一水, Meteo&#39;s blog">
     <meta name="description" content="Stay hungry，Stay foolish">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>cumt2020九月份校赛 | Meteo&#39;s blog</title>
+    <title>Cumt2020九月月校赛 by 水一水 | Meteo&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -245,12 +245,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">cumt2020九月份校赛</h1>
+                    <h1 class="description center-align post-title">Cumt2020九月月校赛 by 水一水</h1>
                 </div>
             </div>
         </div>
@@ -365,12 +365,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/CTF/">
+                                <span class="chip bg-color">CTF</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/CTF/" class="post-category">
+                                CTF
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -379,21 +392,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-27
+                    2020-09-26
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-06
+                    2020-10-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.2k
                 </div>
                 
 
@@ -442,23 +455,23 @@
 <p>21088410841088402108840420888888821088810888884210888888410888421088881088888820888841088842108820888881088884210888880888888408888888410</p>
 <p>```</p>
 <p>如果逆向出发未免太烦了，考虑到对于每个字符的编码函数为：</p>
-<pre><code>    res = &quot;&quot;
+<pre><code>    res = ""
 
 ​    if i &gt;= 8:
 
-​      res += int(i/8)*&quot;8&quot;
+​      res += int(i/8)*"8"
 
 ​     if i%8 &gt;=4:
 
-​      res += int(i%8/4)*&quot;4&quot;
+​      res += int(i%8/4)*"4"
 
 ​    if i%4 &gt;=2:
 
-​      res += int(i%4/2)*&quot;2&quot;
+​      res += int(i%4/2)*"2"
 
 ​    if i%2 &gt;= 1:
 
-​      res += int(i%2/1)*&quot;1&quot;</code></pre>
+​      res += int(i%2/1)*"1"</code></pre>
 <p>将其处理成函数，将0-127的字符全部进行编码，形成哈希映射。</p>
 <p>对编码后的结果以0为分隔符分割，得到list，而后迭代获取对应则得到了flag。</p>
 <h2 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h2><h3 id="test-nc"><a href="#test-nc" class="headerlink" title="test_nc"></a>test_nc</h3><p>直接用nc连接上题目给的端口，肯定自己是个女生，然后得到学长base64加密的联系方式和密码，解密后，加上学长，然后就可以得到flag了。</p>
@@ -627,7 +640,25 @@ data <span class="token operator">=</span> <span class="token punctuation">{</sp
         <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>read<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>session<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
     event<span class="token punctuation">.</span>set<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -652,7 +683,7 @@ data <span class="token operator">=</span> <span class="token punctuation">{</sp
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://meteoweb.top/2020/09/27/cumt2020-jiu-yue-fen-xiao-sai/">https://meteoweb.top/2020/09/27/cumt2020-jiu-yue-fen-xiao-sai/</a>
+                    <a href="https://meteoweb.top/2020/09/26/cumtctf2020-jiu-yue-xiao-sai/">https://meteoweb.top/2020/09/26/cumtctf2020-jiu-yue-xiao-sai/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -689,7 +720,11 @@ data <span class="token operator">=</span> <span class="token punctuation">{</sp
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/CTF/">
+                                    <span class="chip bg-color">CTF</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -855,41 +890,50 @@ data <span class="token operator">=</span> <span class="token punctuation">{</sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/27/cumt2020-jiu-yue-fen-xiao-sai/">
+                <a href="/2020/10/23/cumtctf2020-shi-yue-xiao-sai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="cumt2020九月份校赛">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Cumt2020十月校赛 by 水一水">
                         
-                        <span class="card-title">cumt2020九月份校赛</span>
+                        <span class="card-title">Cumt2020十月校赛 by 水一水</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MSIC连签到都算不上题目给出一个压缩包，看到里面txt，猜是base64加密后图片，解码后得到一个二维码，然后扫码得到\u开头的字符串，用java输出得到字符串，再用核心价值观解码，得到flag。
-真·签到题
-题目给了一个压缩包，猜测是伪
+                            REhello word拖到IDA中查看，打开sub_40156F函数对此代码分析，a1为输入的字符串，查看byte_403020和aIsEasyRight。写一个python脚本推出a1。得到Flag
+non_name1、拖进IDA分析代
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-23
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Meteo
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/cumtCTF/" class="post-category">
+                                    cumtCTF
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CTF/">
+                        <span class="chip bg-color">CTF</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1086,7 +1130,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.2k</span>&nbsp;字
+                class="white-color">12.9k</span>&nbsp;字
             
             
             
