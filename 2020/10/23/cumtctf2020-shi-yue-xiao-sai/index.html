@@ -413,7 +413,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    9 分
                 </div>
                 
 
@@ -728,7 +728,7 @@ Created on Dec 14, 2011
 <p>有个小trick</p>
 <blockquote>
 <h3 id="string-型数据的序列化"><a href="#string-型数据的序列化" class="headerlink" title="string 型数据的序列化"></a><a href="https://www.neatstudio.com/show-161-1.shtml" target="_blank" rel="noopener">string 型数据的序列化</a></h3><p>s:<code>&lt;length&gt;</code>:”<code>&lt;value&gt;</code>“;</p>
-<p>其中 <code>&lt;length&gt;</code> 是 <code>&lt;value&gt; </code>的长度，<code>&lt;length&gt; </code> 是非负整数，数字前可以带有正号（+）。<code>&lt;value&gt; </code>为字符串值，这里的每个字符都是单字节字符，其范围与 ASCII 码的 0 -  255 的字符相对应。每个字符都表示原字符含义，没有转义字符，<code>&lt;value&gt;</code> 两边的引号（””）是必须的，但不计算在  <code>&lt;length&gt;</code> 当中。这里的 <value> 相当于一个字节流，而 <code>&lt;length&gt;</code>  是这个字节流的字节个数。</value></p>
+<p>其中 <code>&lt;length&gt;</code> 是 <code>&lt;value&gt; </code>的长度，<code>&lt;length&gt; </code> 是非负整数，数字前可以带有正号（+）。<code>&lt;value&gt; </code>为字符串值，这里的每个字符都是单字节字符，其范围与 ASCII 码的 0 -  255 的字符相对应。每个字符都表示原字符含义，没有转义字符，<code>&lt;value&gt;</code> 两边的引号（””）是必须的，但不计算在  <code>&lt;length&gt;</code> 当中。这里的 <value> 相当于一个字节流，而 <code>&lt;length&gt;</code>  是这个字节流的字节个数。</p>
 <p>S:<code>&lt;length&gt;</code>:”<code>&lt;value&gt;</code>“;</p>
 <p>其中 <code>&lt;length&gt; </code>是源字符串的长度，而非<code>  &lt;value&gt;</code> 的长度。<code>&lt;length&gt;</code> 是非负整数，数字前可以带有正号（+）。<code>&lt;value&gt;</code> 为经过转义之后的字符串。</p>
 <p>它的转义编码很简单，对于 ASCII 码小于 128 的字符（但不包括 \），按照单个字节写入（与 s 标识的相同），对于 128~255 的字符和 \ 字符，则将其 ASCII 码值转化为 16 进制编码的字符串，以 \ 作为开头，后面两个字节分别是这个字符的 16  进制编码，顺序按照由高位到低位排列，也就是第 8-5 位所对应的16进制数字字符（abcdef 这几个字母是小写）作为第一个字节，第 4-1  位作为第二个字节。依次编码下来，得到的就是 <code>&lt;value&gt;</code> 的内容了。</p>
@@ -738,25 +738,7 @@ Created on Dec 14, 2011
 <p>最终payload</p>
 <pre class=" language-php"><code class="language-php">todos<span class="token operator">=</span>a170de677c96a2097c4d580cea16e0cba<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">%</span>7Bi<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>O<span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token operator">%</span>22Source<span class="token operator">%</span><span class="token number">22</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">%</span>7Bs<span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token operator">%</span>22source<span class="token operator">%</span><span class="token number">22</span><span class="token punctuation">;</span>S<span class="token punctuation">:</span><span class="token number">8</span><span class="token punctuation">:</span><span class="token operator">%</span><span class="token number">22</span><span class="token operator">%</span><span class="token constant">5C66</span><span class="token operator">%</span>5C6c<span class="token operator">%</span><span class="token constant">5C61</span><span class="token operator">%</span><span class="token constant">5C67</span><span class="token operator">%</span>5C2e<span class="token operator">%</span><span class="token constant">5C70</span><span class="token operator">%</span><span class="token constant">5C68</span><span class="token operator">%</span><span class="token constant">5C70</span><span class="token operator">%</span><span class="token number">22</span><span class="token punctuation">;</span><span class="token operator">%</span><span class="token constant">7D</span><span class="token operator">%</span><span class="token constant">7D</span></code></pre>
 <p>加在cookie中提交即可</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
             </div>
             <hr/>
 
@@ -988,51 +970,39 @@ Created on Dec 14, 2011
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/10/23/cumtctf2020-shi-yue-xiao-sai/">
+                <a href="/2021/02/06/cumtctf2021-han-jia-sai-web/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Cumt2020十月校赛 by 水一水">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="cumtctf2021寒假赛web">
                         
-                        <span class="card-title">Cumt2020十月校赛 by 水一水</span>
+                        <span class="card-title">cumtctf2021寒假赛web</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            REhello word拖到IDA中查看，打开sub_40156F函数对此代码分析，a1为输入的字符串，查看byte_403020和aIsEasyRight。写一个python脚本推出a1。得到Flag
-non_name1、拖进IDA分析代
+                            web&lt;=4&lt;?php
+$sandbox = '/www/sandbox/' . md5("ctf" . $_SERVER['REMOTE_ADDR']);
+@mkdir($sandbox);
+@chdir($sandbox);
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-06
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/cumtCTF/" class="post-category">
-                                    cumtCTF
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Meteo
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/CTF/">
-                        <span class="chip bg-color">CTF</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1232,7 +1202,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.9k</span>&nbsp;字
+                class="white-color">14.2k</span>&nbsp;字
             
             
             

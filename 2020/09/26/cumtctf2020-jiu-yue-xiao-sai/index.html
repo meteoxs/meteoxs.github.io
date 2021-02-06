@@ -406,7 +406,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.1k
                 </div>
                 
 
@@ -455,23 +455,23 @@
 <p>21088410841088402108840420888888821088810888884210888888410888421088881088888820888841088842108820888881088884210888880888888408888888410</p>
 <p>```</p>
 <p>如果逆向出发未免太烦了，考虑到对于每个字符的编码函数为：</p>
-<pre><code>    res = ""
+<pre><code>    res = &quot;&quot;
 
 ​    if i &gt;= 8:
 
-​      res += int(i/8)*"8"
+​      res += int(i/8)*&quot;8&quot;
 
 ​     if i%8 &gt;=4:
 
-​      res += int(i%8/4)*"4"
+​      res += int(i%8/4)*&quot;4&quot;
 
 ​    if i%4 &gt;=2:
 
-​      res += int(i%4/2)*"2"
+​      res += int(i%4/2)*&quot;2&quot;
 
 ​    if i%2 &gt;= 1:
 
-​      res += int(i%2/1)*"1"</code></pre>
+​      res += int(i%2/1)*&quot;1&quot;</code></pre>
 <p>将其处理成函数，将0-127的字符全部进行编码，形成哈希映射。</p>
 <p>对编码后的结果以0为分隔符分割，得到list，而后迭代获取对应则得到了flag。</p>
 <h2 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h2><h3 id="test-nc"><a href="#test-nc" class="headerlink" title="test_nc"></a>test_nc</h3><p>直接用nc连接上题目给的端口，肯定自己是个女生，然后得到学长base64加密的联系方式和密码，解密后，加上学长，然后就可以得到flag了。</p>
@@ -640,25 +640,7 @@ data <span class="token operator">=</span> <span class="token punctuation">{</sp
         <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>read<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>session<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
     event<span class="token punctuation">.</span>set<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
             </div>
             <hr/>
 
@@ -1130,7 +1112,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.9k</span>&nbsp;字
+                class="white-color">14.2k</span>&nbsp;字
             
             
             
